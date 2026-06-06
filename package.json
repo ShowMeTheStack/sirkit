@@ -1,0 +1,14 @@
+{
+  "name": "sirkit",
+  "version": "0.1.0",
+  "description": "Digital design you can build, run and see inside: gates, flip-flops, registers, state machines and Verilog, drawn and simulated.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node tests/layout.mjs",
+    "diagrams": "node tools/check-diagrams.mjs"
+  },
+  "author": "Jyotiprakash Mishra <mail@jyotiprakash.org>",
+  "license": "GPL-3.0-or-later"
+}
