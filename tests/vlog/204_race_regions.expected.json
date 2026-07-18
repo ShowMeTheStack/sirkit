@@ -1,0 +1,1 @@
+{"out":["c changed to 1 at 0","after #0: a=1 b=3 c=1","active: a=1 b=3 c=1","c changed to 4 at 10","strobe: a=2 b=3 c=4","next step: a=2 b=3 c=4","blocking wins until the NBA lands: a=12","last NBA wins: a=11","t+1 b=3","t+2 b=40","#0 after clk: c=4","c changed to 104 at 14"],"vcd":null}

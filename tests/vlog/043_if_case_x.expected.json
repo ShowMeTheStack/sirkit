@@ -1,0 +1,1 @@
+{"out":["if(1)->1 if(!1)->2","if(0)->2 if(!0)->1","if(x)->2 if(!x)->2","if(z)->2 if(!z)->2","case(00)=10 casez=21 casex=30","case(11)=99 casez=20 casex=31","case(1x)=12 casez=20 casex=31","case(x1)=13 casez=98 casex=30","case(zz)=14 casez=20 casex=30","case(xx)=99 casez=98 casex=30","case(z0)=99 casez=20 casex=30","while x ran 0","for x ran 1","repeat ran 21"],"vcd":null}

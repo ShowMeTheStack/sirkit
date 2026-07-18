@@ -1,0 +1,1 @@
+{"out":["display1 t=1 x=2 y=1","display2 t=1 x=2 y=5","display3 t=1 x=4 y=5","strobe1  t=1 x=3 y=6","strobe2  t=1 x=3 y=6","display4 t=2 x=7 (monitor prints after)","monitor  t=2 x=12 y=6","monitor  t=3 x=8 y=6","display5 t=5 x=8","monitor  t=5 x=11 y=6","monitor  t=7 x=11 y=0"],"vcd":null}

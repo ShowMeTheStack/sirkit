@@ -1,0 +1,40 @@
+module tb;
+  reg [7:0] a, b;
+  reg [7:0] s8;
+  reg [8:0] s9;
+  reg [3:0] s4;
+  reg [15:0] s16;
+  wire [8:0] wsum = a + b;
+  wire [7:0] wtrunc = a + b;
+  wire carry = (a + b) >> 8;
+  wire carry9 = (a + b + 9'd0) >> 8;
+  initial begin
+    $dumpfile("037.vcd");
+    $dumpvars(0, tb);
+    a = 8'd200; b = 8'd100;
+    s8 = a + b;           $display("1 s8=%0d", s8);
+    s9 = a + b;           $display("2 s9=%0d", s9);
+    s4 = a + b;           $display("3 s4=%0d", s4);
+    s16 = a + b;          $display("4 s16=%0d", s16);
+    s9 = (a + b) >> 1;    $display("5 avg=%0d", s9);
+    s8 = (a + b) >> 1;    $display("6 avg8=%0d", s8);
+    s8 = (a + b + 0) >> 1; $display("7 avg8 int=%0d", s8);
+    #1 $display("8 wsum=%0d wtrunc=%0d carry=%b carry9=%b", wsum, wtrunc, carry, carry9);
+    $display("9 self %0d %0d", a + b, a + b + 0);
+    $display("10 cmp %b %b", a + b > 8'd255, a + b + 9'd0 > 8'd255);
+    s16 = {a + b};        $display("11 %0d", s16);
+    s16 = {1'b0, a} + b;  $display("12 %0d", s16);
+    s16 = a * b;          $display("13 %0d", s16);
+    s16 = (a * b) / 4;    $display("14 %0d", s16);
+    s16 = {a * b} / 4;    $display("15 %0d", s16);
+    s8 = ~a + 1;          $display("16 %0d", s8);
+    s16 = ~a;             $display("17 %h", s16);
+    s16 = ~a + 1'b0;      $display("18 %h", s16);
+    s16 = (a == b) + 8'd255; $display("19 %0d", s16);
+    s16 = a ? b + 200 : 0; $display("20 %0d", s16);
+    s4 = 4'd8;
+    $display("21 %0d %0d", s4 + s4, (s4 + s4) >> 1);
+    s16 = s4 << 2;        $display("22 %0d", s16);
+    $display("23 %0d", s4 << 2);
+  end
+endmodule

@@ -1,0 +1,1 @@
+{"out":["t=1 e1 waiter: r=0 s=7","t=2 e2 waiter: r=5","t=2 e2 waiter after #0: r=5","t=2 e2 strobe: r=6","t=3 e1 waiter: r=6 s=7","t=4 fork saw r change to 1","t=4 joined r=1"],"vcd":null}

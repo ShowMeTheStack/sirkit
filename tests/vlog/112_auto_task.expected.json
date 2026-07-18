@@ -1,0 +1,1 @@
+{"out":["t=3 copy of 20 after 3 -> 21","t=5 copy of 30 after 5 -> 31","t=7 copy of 10 after 7 -> 11","auto: a=11 b=21 c=31","static: a=31 b=31 c=31","t=17 ab 3","t=18 cd 2","t=19 ef 4","t=20 ab 2","t=21 cd 1","t=22 ef 3","t=23 ab 1","t=25 ef 2","t=28 ef 1","t=28 done"],"vcd":null}

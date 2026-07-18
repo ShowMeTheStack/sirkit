@@ -1,0 +1,1 @@
+{"out":["mode B","  fast variant","  not slow","depth=3 r=16","fell through to else","both on one line"],"vcd":{"tb.r":[[0,"00000010"],[1,"00010000"]]}}

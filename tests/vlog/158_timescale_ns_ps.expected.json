@@ -1,0 +1,1 @@
+{"out":["A time=2 realtime=1.500000 t=                1500","B time=2 realtime=1.750000","C time=2 realtime=1.750000","D time=2 realtime=1.7510","E time=4 realtime=4.2510","F time=5 realtime=4.751 stime=5","G realtime=4.876 c=7"],"vcd":{"tb.c":[[0,"0000"],[1500,"0001"],[1750,"0011"],[1751,"0100"],[4251,"0101"],[4751,"0110"],[4876,"0111"]]}}

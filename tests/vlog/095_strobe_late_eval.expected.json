@@ -1,0 +1,1 @@
+{"out":["display i=0","display i=1","display i=2","strobe  i=3","strobe  i=3","strobe  i=3","strobe  m[1]=77 acc=5","t=1 display acc=5","t=1 strobe acc=13 i=3","t=2 write without newline; display ends the line","t=2 strobe after write","OK done"],"vcd":null}

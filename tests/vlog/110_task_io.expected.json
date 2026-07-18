@@ -1,0 +1,1 @@
+{"out":["first: a=200 b=100 s=44 d=100 c=1 acc=xx calls=1","second: a=200 b=100 s=8 d=254 c=0 acc=xx calls=2","bump: a=200 b=100 s=8 d=254 c=0 acc=00 calls=2","swap: a=100 b=200 s=8 d=254 c=0 acc=00 calls=2","slice: a=100 b=200 s=8 d=156 c=1 acc=2c calls=3","xin: a=100 b=200 s=x d=x c=x acc=2c calls=4","early exit","v=9"],"vcd":null}

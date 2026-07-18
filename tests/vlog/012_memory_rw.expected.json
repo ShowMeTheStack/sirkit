@@ -1,0 +1,1 @@
+{"out":["uninit mem[0]=xxxxxxxx","mem[3]=33 mem[15]=ff rev[0]=15 rev[7]= 8","mem[a]=55 bit3=0 nibble=5","mem[5]=00010100","mem[x]=xxxxxxxx","after write x: mem[0]=00 mem[1]=11","mem[20]=xxxxxxxx","mem[-3]=xxxxxxxx","mem[2]=z0z0x1x1","sum 136"],"vcd":{"tb.a":[[0,"xxxx"]],"tb.d":[[0,"01010101"]],"tb.i":[[0,"11111111111111111111111111111101"]]}}

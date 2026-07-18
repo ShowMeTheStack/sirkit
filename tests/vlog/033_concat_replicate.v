@@ -1,0 +1,40 @@
+module tb;
+  reg [3:0] a, b;
+  reg [7:0] c;
+  reg [15:0] w;
+  reg [1:0] hi, lo;
+  reg [5:0] mid;
+  wire [11:0] cw = {a, b, a};
+  wire [7:0] rep = {2{a}};
+  initial begin
+    $dumpfile("033.vcd");
+    $dumpvars(0, tb);
+    a = 4'hA; b = 4'h5;
+    #1;
+    $display("1 %h %h", cw, rep);
+    $display("2 %b", {a, 1'b0, b[0], 2'b11});
+    $display("3 %h", {4{4'h3}});
+    $display("4 %b", {3{a[1:0], 1'b1}});
+    $display("5 %b", {2{{2{b[2]}}, 1'bx}});
+    w = {a, b};
+    $display("6 %h", w);
+    w = {a, b} + {b, a};
+    $display("7 %h", w);
+    c = {a, b} + {b, a};
+    $display("8 %h", c);
+    {hi, mid, lo} = 10'b11_010101_00;
+    $display("9 %b %b %b", hi, mid, lo);
+    {hi, lo} = 8'hF6;
+    $display("10 %b %b", hi, lo);
+    {c, a} = 12'hABC;
+    $display("11 %h %h", c, a);
+    $display("12 %b", {1'bz, 2'bx1, 1'b0});
+    $display("13 %0d", {4'd1, 4'd0});
+    $display("14 %b", {4'sb1000});
+    w = {4'sb1000};
+    $display("15 %b", w);
+    $display("16 %h", {"a", "b"});
+    $display("17 %b", {a[0 +: 2], b[3 -: 2]});
+    $display("18 %h", {2{8'hAB}} >> 4);
+  end
+endmodule

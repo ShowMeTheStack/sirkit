@@ -1,0 +1,42 @@
+module tb;
+  reg [15:0] v;
+  reg [0:7] be;
+  reg [3:0] n;
+  reg [7:0] o;
+  integer k;
+  initial begin
+    $dumpfile("010.vcd");
+    $dumpvars(0, tb);
+    v = 16'hA5C3;
+    be = 8'b1000_0001;
+    $display("v[0]=%b v[15]=%b v[7:4]=%h v[15:8]=%h", v[0], v[15], v[7:4], v[15:8]);
+    $display("be[0]=%b be[7]=%b be[0:3]=%b be[4:7]=%b", be[0], be[7], be[0:3], be[4:7]);
+    v[3:0] = 4'h0;
+    v[15] = 1'b0;
+    $display("v=%h", v);
+    be[1:2] = 2'b11;
+    $display("be=%b", be);
+    n = 4'd2;
+    $display("v[n]=%b v[n+8]=%b", v[n], v[n+8]);
+    n = 4'bx;
+    $display("v[x]=%b", v[n]);
+    k = 20;
+    $display("v[20]=%b", v[k]);
+    k = -1;
+    $display("v[-1]=%b", v[k]);
+    v[k] = 1'b1;
+    $display("after write -1 v=%h", v);
+    k = 3;
+    v[k] = 1'b1;
+    $display("after write 3 v=%h", v);
+    n = 4'bz;
+    v[n] = 1'b1;
+    $display("after write z v=%h", v);
+    o = v;
+    $display("o=%h", o);
+    o = v[11:4];
+    $display("o=%h", o);
+    o[7:4] = o[3:0];
+    $display("o=%h", o);
+  end
+endmodule

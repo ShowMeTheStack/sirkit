@@ -1,0 +1,1 @@
+{"out":["t=5 after #0 a=11","t=10 after #0 q=0 b=1 (NBA pending)","t=10 after second #0 q=0","t=10 triple #0 sees q=0 b=1","t=10 woke on q change q=42","t=10 strobe q=42","t=11 next step q=42"],"vcd":null}

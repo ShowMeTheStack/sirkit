@@ -1,0 +1,1 @@
+{"out":["tally v=5 total=x n=x","tally v=0 total=0 n=0","tally v=5 total=5 n=1","tally v=7 total=12 n=2","tally v=250 total=6 n=3","peek total=6 n=3","fresh v=3 total=3","fresh v=4 total=4","acc 1 3 6","ids 101 102 103","tally v=1 total=7 n=41"],"vcd":null}

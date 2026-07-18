@@ -1,0 +1,41 @@
+module tb;
+  reg [7:0] a;
+  reg [15:0] r;
+  integer i, j;
+  reg signed [7:0] s;
+  initial begin
+    $dumpfile("024.vcd");
+    $dumpvars(0, tb);
+    a = 3;
+    r = a ** 2;          $display("1 %0d", r);
+    r = 2 ** 10;         $display("2 %0d", r);
+    r = 2 ** 16;         $display("3 %0d", r);
+    r = a ** 0;          $display("4 %0d", r);
+    r = 0 ** 0;          $display("5 %0d", r);
+    i = 2; j = -1;
+    $display("6 %0d", i ** j);
+    i = 1;
+    $display("7 %0d", i ** j);
+    i = -1; j = -3;
+    $display("8 %0d", i ** j);
+    i = 0; j = -2;
+    $display("9 %0d", i ** j);
+    i = -2; j = 3;
+    $display("10 %0d", i ** j);
+    i = -3; j = 4;
+    $display("11 %0d", i ** j);
+    a = 8'bx;
+    $display("12 %b", 2 ** a);
+    $display("13 %b", a ** 2);
+    a = 8'd7;
+    $display("14 %0d", a ** 3);
+    r = a ** 3;
+    $display("15 %0d", r);
+    s = -2;
+    $display("16 %0d", s ** 3);
+    $display("17 %0d", 2 ** 31);
+    $display("18 %0d", 2 ** 32);
+    $display("19 %0d", 10 ** 9);
+    $display("20 %0d", 2.0 ** 3 > 7);
+  end
+endmodule

@@ -1,0 +1,1 @@
+{"out":["u: < 0 <= 0 > 1 >= 1","s: < 1 <= 1 > 0 >= 0","mixed s1<u2 0  s1<s2 1","s1 < 0 1  s1 < 0u 0  s1 < 8'sd0 1","int -1 > 1'b0? 1  -1 > 32'd0? 1","eq 1 0 1","width zero-ext 1 1","mix ext 0","x: x x x x","z: x","equal edges 1 0","in arith 0","chained 0"],"vcd":{"tb.s1":[[0,"11001000"]],"tb.s2":[[0,"00110010"]],"tb.u1":[[0,"zzzzzzzz"]],"tb.u2":[[0,"00110010"]]}}
