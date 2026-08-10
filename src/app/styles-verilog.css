@@ -1,0 +1,100 @@
+/* The Verilog page: file tabs, the code editor with its gutter and error marks, the console, the waves and the drawn circuit. */
+.vl { max-width: 1500px; margin: 0 auto; }
+.vl-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px 18px; flex-wrap: wrap; margin-bottom: 12px; }
+.vl-head .page-title { margin: 0 0 2px; }
+.vl-lead { margin: 0; font-size: 15px; }
+.vl-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.vl-toplab { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 650; color: var(--muted); }
+.vl-toplab select { max-width: 190px; }
+.vl-notice { margin-bottom: 12px; }
+.vl-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+.vl-edit, .vl-out { display: flex; flex-direction: column; min-width: 0; }
+
+/* file tabs */
+.vl-tabs { display: flex; gap: 2px; padding: 6px 6px 0; background: var(--surface2); border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; }
+.vl-tabs::-webkit-scrollbar { display: none; }
+.vl-tabs.more-right { mask-image: linear-gradient(to right, #000 88%, transparent); -webkit-mask-image: linear-gradient(to right, #000 88%, transparent); }
+.vl-tab { flex: none; display: inline-flex; align-items: center; gap: 6px; border: 1px solid transparent; border-bottom: none; background: none; padding: 6px 10px; border-radius: 9px 9px 0 0; cursor: pointer; color: var(--muted); font: 600 13px var(--mono); }
+.vl-tab:hover { color: var(--text); background: color-mix(in srgb, var(--surface) 60%, transparent); }
+.vl-tab.on { background: var(--surface); color: var(--text); border-color: var(--border); margin-bottom: -1px; }
+.vl-tab.bad .vl-tabname { text-decoration: wavy underline var(--bad); text-underline-offset: 3px; }
+.vl-tabx { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 5px; font: 600 14px var(--font); color: var(--muted); }
+.vl-tabx:hover { background: var(--bad-soft); color: var(--bad); }
+.vl-add { padding: 6px 8px; }
+.vl-add svg { width: 15px; height: 15px; }
+
+/* the code editor: a transparent text box over its highlighted copy, line numbers beside */
+.vl-scroll { position: relative; height: clamp(300px, calc(100vh - 360px), 560px); overflow: auto; background: var(--code-bg); scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--muted) 55%, transparent) transparent; }
+.vl-scroll::-webkit-scrollbar { width: 10px; height: 10px; }
+.vl-scroll::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--muted) 45%, transparent); border-radius: 6px; border: 2px solid var(--code-bg); }
+.vl-scroll.more-right { box-shadow: inset -18px 0 14px -14px color-mix(in srgb, var(--text) 28%, transparent); }
+.vl-lines { display: flex; min-height: 100%; width: max-content; min-width: 100%; }
+.vl-gut { position: sticky; left: 0; z-index: 2; flex: none; padding: 10px 0; min-width: 44px; text-align: right; background: var(--surface2); border-right: 1px solid var(--border); font: 12px/20px var(--mono); color: var(--muted); user-select: none; }
+.vl-ln { padding: 0 9px 0 14px; position: relative; height: 20px; }
+.vl-ln.bad { color: var(--bad); font-weight: 700; background: var(--bad-soft); }
+.vl-ln.bad::before { content: ""; position: absolute; left: 5px; top: 7px; width: 6px; height: 6px; border-radius: 50%; background: var(--bad); }
+.vl-code { position: relative; flex: 1 0 auto; min-width: 0; font: 13.5px/20px var(--mono); }
+.vl-hl, .vl-ta { margin: 0; padding: 10px 14px 10px 12px; font: 13.5px/20px var(--mono); white-space: pre; tab-size: 4; letter-spacing: 0; border: none; border-radius: 0; box-sizing: border-box; }
+.vl-hl { position: absolute; inset: 0; pointer-events: none; color: var(--text); overflow: hidden; }
+.vl-ta { position: relative; display: block; width: 100%; min-height: 100%; resize: none; overflow: hidden; background: transparent; color: transparent; caret-color: var(--text); outline: none; }
+.vl-ta:focus { box-shadow: none; }
+.vl-ta::selection { background: color-mix(in srgb, var(--accent) 32%, transparent); color: transparent; }
+.vk-kw { color: var(--k-kw); font-weight: 650; }
+.vk-sys { color: var(--k-nt); }
+.vk-num { color: var(--k-t); }
+.vk-str { color: var(--k-eps); }
+.vk-dir { color: var(--k-op); }
+.vk-op { color: var(--k-op); }
+.vk-com { color: var(--k-com); font-style: italic; }
+.vk-err { text-decoration: wavy underline var(--bad); text-decoration-skip-ink: none; text-underline-offset: 3px; background: color-mix(in srgb, var(--bad) 10%, transparent); }
+.vl-status { padding: 7px 12px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); }
+.vl-status.ok { color: var(--good); }
+.vl-status.bad { color: var(--bad); font-weight: 650; }
+.vl-probs { list-style: none; margin: 0; padding: 0 6px 6px; max-height: 160px; overflow-y: auto; }
+.vl-probs:empty { display: none; }
+.vl-prob { display: flex; gap: 10px; width: 100%; text-align: left; border: none; background: var(--bad-soft); color: var(--text); border-radius: 8px; padding: 6px 10px; margin-top: 4px; cursor: pointer; font-size: 13.5px; line-height: 1.4; }
+.vl-prob:hover { outline: 1px solid var(--bad); }
+.vl-where { font: 600 12px/1.6 var(--mono); color: var(--bad); white-space: nowrap; flex: none; }
+
+/* results */
+.vl-outhead { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-bottom: 1px solid var(--border); background: var(--surface2); }
+.vl-pane { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.vl-sub { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 13px; }
+.vl-sub b { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.vl-sub select { min-height: 32px; padding: 3px 8px; font: 13px var(--mono); max-width: 220px; }
+.vl-sub .btn.small { margin-left: auto; }
+.vl-console { font: 13px/1.5 var(--mono); background: var(--code-bg); border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; max-height: 210px; min-height: 64px; overflow-y: auto; }
+.vl-line { white-space: pre-wrap; overflow-wrap: anywhere; }
+.vl-line.err { color: var(--bad); }
+.vl-line.warn { color: var(--hot-deep); }
+.vl-empty { color: var(--muted); font: 13.5px/1.5 var(--font); padding: 4px 2px; }
+.vl-empty.err { color: var(--bad); }
+.vl-wave { min-height: 80px; min-width: 0; }
+.vl-circ { min-width: 0; }
+.vl-cinfo { margin: 0 0 6px; font-size: 13px; }
+.vl-sk { padding: 8px; border: 1px solid var(--border); overflow: hidden; }
+.vl-sk svg.sk { margin: 0 auto; }
+.vl-reasons { font-size: 14px; }
+.vl-reasons ul { margin: 6px 0; padding-left: 20px; }
+.vl-reasons p { font-size: 13px; }
+
+:root[data-projector="on"] .vl-hl, :root[data-projector="on"] .vl-ta { font-size: 17px; }
+:root[data-projector="on"] .vl-console { font-size: 16px; }
+@media (max-width: 1100px) {
+  .vl-grid { grid-template-columns: 1fr; }
+  .vl-scroll { height: clamp(280px, 52vh, 520px); }
+}
+@media (max-width: 600px) {
+  .vl-head { align-items: stretch; }
+  .vl-actions { width: 100%; }
+  .vl-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .vl-toplab { flex: 1 1 100%; }
+  .vl-toplab select { flex: 1; max-width: none; }
+  .vl-lead { font-size: 14px; }
+  .vl-scroll { height: 50vh; }
+  .vl-hl, .vl-ta { font-size: 13px; }
+}
+.vl-notes { margin: 8px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
+.vl-sk.wide { overflow-x: auto; scrollbar-width: thin; }
+.vl-scrollnote { font-size: 12px; color: var(--muted); margin: 0 0 4px; }
+.vl-scrollnote span { color: var(--accent); font-weight: 700; }
