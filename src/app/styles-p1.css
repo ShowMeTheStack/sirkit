@@ -1,0 +1,65 @@
+/* Part 1 pictures: numbers and codes */
+.it-text.n-side .free-text { fill: var(--muted); font-weight: 600; }
+.it-line.n-rule .plain-line { stroke: var(--text); stroke-width: 2; }
+.it-line.n-seam .plain-line { stroke: var(--bad); stroke-width: 3; stroke-dasharray: 6 4; }
+.it-line.n-wrap .plain-line { stroke: var(--node-line); stroke-width: 2; stroke-dasharray: 3 4; }
+.it-line.n-bus .plain-line { stroke: var(--part-b); stroke-width: 2.4; }
+.it-line.n-bus.hot .plain-line { stroke: var(--hot); stroke-width: 3; }
+.it-cell.n-divisor .cell-box { fill: var(--surface2); stroke: var(--border); }
+.it-cell.n-divisor .cell-text { fill: var(--muted); font-weight: 700; }
+.it-cell.n-zero .cell-text { fill: var(--muted); }
+.it-cell.n-rem .cell-box { fill: color-mix(in srgb, var(--c1) 12%, var(--node)); stroke: var(--c1); stroke-width: 2.2; }
+.it-cell.n-rem .cell-text { fill: var(--text); font-weight: 750; }
+.it-cell.n-rem.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 3; }
+.it-cell.n-rep .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.4; }
+.it-cell.n-rep .cell-text { font-weight: 750; }
+.it-cell.n-weight .cell-box { fill: var(--part-b-soft); stroke: color-mix(in srgb, var(--part-b) 55%, transparent); }
+.it-cell.n-weight .cell-text { fill: var(--part-b); font-weight: 700; }
+.it-cell.n-term .cell-box { fill: var(--surface2); stroke: var(--node-line); }
+.it-cell.n-term.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.6; }
+.it-cell.n-bit .cell-box { rx: 5; }
+.it-cell.n-one .cell-text { fill: var(--accent); font-weight: 800; }
+.it-cell.n-pad .cell-box { fill: none; stroke-dasharray: 3 3; }
+.it-cell.n-pad .cell-text { fill: var(--muted); opacity: 0.55; font-weight: 500; }
+.it-cell.n-carry .cell-box { fill: var(--part-b-soft); stroke: var(--part-b); stroke-width: 1.8; }
+.it-cell.n-carry .cell-text { fill: var(--part-b); font-weight: 750; }
+.it-cell.n-carry.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); }
+.it-cell.n-carry.bad .cell-box { fill: var(--bad-soft); stroke: var(--bad); }
+.it-cell.n-carry.bad .cell-text { fill: var(--bad); }
+.it-cell.n-res .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.2; }
+.it-cell.n-res.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 3; }
+.it-cell.n-res.bad .cell-box { fill: var(--bad-soft); stroke: var(--bad); }
+.it-cell.n-sign .cell-box { fill: color-mix(in srgb, var(--c4) 13%, var(--node)); stroke: var(--c4); stroke-width: 2.2; }
+.it-cell.n-parity .cell-box { fill: color-mix(in srgb, var(--c4) 13%, var(--node)); stroke: var(--c4); stroke-width: 2.2; }
+.it-cell.n-parity .cell-text { fill: var(--c4); font-weight: 800; }
+.it-cell.n-flip .cell-box { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 3; }
+.it-cell.n-flip .cell-text { fill: var(--bad); font-weight: 800; }
+.it-cell.n-plain .cell-box { fill: none; stroke: none; }
+.it-cell.n-plain .cell-text { fill: var(--text); font-weight: 650; }
+.it-cell.n-key .cell-box { fill: var(--surface2); stroke: var(--border); }
+.it-cell.n-key .cell-text { fill: var(--muted); font-weight: 700; }
+.it-cell.n-diff .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.6; }
+.it-cell.n-diff .cell-text { fill: var(--hot-deep); font-weight: 800; }
+.it-cell.n-row .cell-box { fill: var(--surface2); stroke: none; }
+.it-token.n-point .token-dot { fill: var(--text); stroke: none; }
+.it-token.n-on .token-dot { fill: var(--accent); stroke: var(--surface); stroke-width: 1.5; }
+.it-token.n-head .token-dot { fill: var(--hot); stroke: var(--surface); }
+.it-state.n-pos .st-shape { fill: var(--node); stroke: var(--node-line); stroke-width: 1.8; }
+.it-state.n-pos .st-text { font-family: var(--mono); font-size: 15px; }
+.it-state.n-pos.neg .st-shape { fill: color-mix(in srgb, var(--c4) 10%, var(--node)); stroke: color-mix(in srgb, var(--c4) 60%, var(--node-line)); }
+.it-state.n-pos.hot .st-shape { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 3; }
+.it-state.n-pos.good .st-shape { fill: var(--good-soft); stroke: var(--good); stroke-width: 3; }
+.it-state.n-pos.bad .st-shape { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 3; }
+.it-text.n-bits .free-text { font: 600 13px var(--mono); fill: var(--muted); }
+.it-text.n-bits.hot .free-text { fill: var(--hot-deep); font-weight: 800; }
+.it-ellipse.n-c0 .ell-shape { fill: color-mix(in srgb, var(--c1) 9%, transparent); stroke: var(--c1); stroke-width: 2.2; }
+.it-ellipse.n-c1 .ell-shape { fill: color-mix(in srgb, var(--c2) 9%, transparent); stroke: var(--c2); stroke-width: 2.2; }
+.it-ellipse.n-c2 .ell-shape { fill: color-mix(in srgb, var(--c4) 9%, transparent); stroke: var(--c4); stroke-width: 2.2; }
+.it-ellipse.bad .ell-shape { fill: color-mix(in srgb, var(--bad) 12%, transparent); stroke: var(--bad); stroke-width: 3.2; }
+.it-ellipse.good .ell-shape { stroke-width: 3; }
+.it-ellipse .ell-text { font-weight: 750; fill: var(--text); }
+.it-state.n-pos.trail .st-shape { stroke: var(--hot); stroke-width: 2.4; stroke-dasharray: 4 3; }
+.it-ellipse.n-disc .ell-shape { fill: color-mix(in srgb, var(--surface2) 70%, transparent); stroke: var(--node-line); stroke-width: 2; }
+.it-token.n-off .token-dot { fill: var(--node-line); stroke: none; }
+.it-token.n-on.n-read .token-dot { fill: var(--hot); stroke: var(--hot-deep); stroke-width: 1.5; }
+.it-token.n-off.n-read .token-dot { fill: var(--hot-deep); }
