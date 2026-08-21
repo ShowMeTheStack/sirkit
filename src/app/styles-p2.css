@@ -1,0 +1,49 @@
+/* Part 2 pictures: expressions as chips, subterm boxes, inversion bubbles, valued tree nodes, law cards. */
+.it-cell.xtok .cell-box { fill: transparent; stroke: transparent; }
+.it-cell.xtok .cell-text { font-family: var(--mono); fill: var(--text); font-weight: 650; }
+.it-cell.xtok.k-op .cell-text { fill: var(--k-op); }
+.it-cell.xtok.k-paren .cell-text { fill: var(--muted); font-weight: 500; }
+.it-cell.xtok.k-const .cell-text { fill: var(--k-t); }
+.it-cell.xtok.lit .cell-box, .it-cell.xtok.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 1.6; }
+.it-cell.xtok.lit .cell-text, .it-cell.xtok.hot .cell-text { fill: var(--hot-deep); }
+.it-cell.xtok.new .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 1.6; }
+.it-cell.xtok.new .cell-text { fill: var(--good); }
+.it-cell.xtok.flip .cell-box { fill: var(--part-b-soft); stroke: var(--part-b); stroke-width: 1.6; }
+.it-cell.xtok.flip .cell-text { fill: var(--part-b); }
+.it-cell.xtok.bad .cell-box { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 1.6; }
+.it-cell.xtok.bad .cell-text { fill: var(--bad); }
+.it-cell.xtok.gone .cell-text { fill: var(--muted); text-decoration: line-through; }
+.it-cell.xtok.gone .cell-box { fill: transparent; stroke: transparent; }
+.it-region.xbox .region-box { fill: color-mix(in srgb, var(--c1) 9%, transparent); stroke: var(--c1); stroke-width: 2; stroke-dasharray: 5 4; }
+.it-region.xbox.hot .region-box { fill: color-mix(in srgb, var(--hot) 12%, transparent); stroke: var(--hot); stroke-dasharray: none; }
+.it-region.xbox.good .region-box { fill: color-mix(in srgb, var(--good) 12%, transparent); stroke: var(--good); stroke-dasharray: none; }
+.it-region.xbox.bad .region-box { fill: color-mix(in srgb, var(--bad) 10%, transparent); stroke: var(--bad); }
+.it-region.xbox.alt .region-box { fill: color-mix(in srgb, var(--part-b) 10%, transparent); stroke: var(--part-b); }
+.it-token.xbubble .token-dot { fill: var(--sk-part, var(--node)); stroke: var(--sk-line, var(--edge)); stroke-width: 1.8; }
+.it-token.xbubble.hot .token-dot { stroke: var(--hot-deep); stroke-width: 2.6; fill: var(--hot-soft); }
+.it-state.xop .st-text { font-size: 13px; letter-spacing: 0.04em; }
+.it-state.xleaf .st-text { font-family: var(--mono); }
+.it-state.xv1 .st-shape { stroke: var(--v1, var(--accent)); stroke-width: 2.6; }
+.it-state.xv0 .st-shape { stroke: var(--v0, var(--node-line)); }
+.it-state.xsub .st-sub { font-family: var(--mono); font-weight: 700; fill: var(--text); }
+.it-state.xv1 .st-sub { fill: var(--v1, var(--accent)); }
+.it-cell.law .cell-box { fill: var(--surface); stroke: var(--part-b); stroke-width: 2; }
+.it-cell.law .cell-text { fill: var(--text); }
+.it-cell.law.bad .cell-box { stroke: var(--bad); fill: var(--bad-soft); }
+.it-cell.law.good .cell-box { stroke: var(--good); fill: var(--good-soft); }
+.it-cell.fcard .cell-box { fill: var(--surface); stroke: var(--border); }
+.it-cell.fcard.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.6; }
+.it-cell.fcard.good .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.6; }
+.it-cell.fcard .cell-text { font-size: 13px; }
+.it-cell.bit1 .cell-text { fill: var(--accent); font-weight: 750; }
+.it-cell.bit0 .cell-text { fill: var(--muted); }
+.it-cell.lvH .cell-text { fill: var(--part-b); font-weight: 750; }
+.it-cell.lvL .cell-text { fill: var(--k-t); font-weight: 750; }
+.it-cell.nchip .cell-box { fill: var(--surface2); stroke: var(--node-line); }
+.it-cell.nchip .cell-text { font-family: var(--mono); font-weight: 700; }
+.it-cell.nchip.on .cell-box { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2.4; }
+.it-cell.nchip.on .cell-text { fill: var(--accent); }
+.it-cell.nchip.off .cell-box { fill: var(--surface); stroke: var(--k-t); stroke-width: 2; }
+.it-cell.nchip.off .cell-text { fill: var(--k-t); }
+.it-cell.nchip.dc .cell-box { fill: var(--surface); stroke: var(--warn); stroke-dasharray: 4 3; }
+.it-cell.nchip.dc .cell-text { fill: var(--warn); }
