@@ -1,0 +1,55 @@
+/* Quine–McCluskey and implementation topics: tabulation rows and bands, the prime implicant chart, chips,
+   cost bars and inversion bubbles on schematics. */
+.it-region.qm-band .region-box { fill: color-mix(in srgb, var(--c1) 6%, var(--st-bg)); stroke: color-mix(in srgb, var(--c1) 30%, transparent); stroke-width: 1.2; }
+.it-region.qm-band.b1 .region-box { fill: color-mix(in srgb, var(--c4) 6%, var(--st-bg)); stroke: color-mix(in srgb, var(--c4) 30%, transparent); }
+.it-text.qm-band-label .free-text { font: 600 11px var(--font); fill: var(--muted); letter-spacing: 0.03em; }
+.it-cell.qm-cube .cell-text { font-weight: 700; letter-spacing: 0.08em; }
+.it-cell.qm-m .cell-text { fill: var(--muted); }
+.it-cell.qm-m.hot .cell-text, .it-cell.qm-m.src-a .cell-text { fill: var(--text); }
+.it-cell.prime .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.2; }
+.it-cell.prime.dim .cell-box, .it-cell.dconly.prime .cell-box { fill: var(--surface2); stroke: var(--node-line); stroke-dasharray: 4 3; }
+.it-text.qm-check .free-text { fill: var(--good); font-weight: 800; }
+.it-cell.qm-plabel .cell-box { fill: var(--good); stroke: none; }
+.it-cell.qm-plabel .cell-text { fill: var(--accent-text); font-weight: 750; }
+.it-cell.chip .cell-text { font-weight: 650; }
+.it-cell.chip.good .cell-box { fill: var(--good-soft); stroke: var(--good); }
+.it-cell.chip.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.6; }
+.it-cell.chip.dconly .cell-box, .it-cell.chip.gone .cell-box { fill: var(--surface2); stroke: var(--node-line); stroke-dasharray: 4 3; }
+.it-cell.chip.gone .cell-text { fill: var(--muted); text-decoration: line-through; }
+.it-cell.chip .cell-sub { font: 500 11px var(--mono); fill: var(--muted); }
+/* the chart */
+.it-cell.pc-row .cell-text { font-family: var(--mono); font-weight: 650; }
+.it-cell.pc-row.gone .cell-text, .it-cell.pc-col.gone .cell-text { fill: var(--muted); text-decoration: line-through; }
+.it-cell.pc-row.good .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.4; }
+.it-cell.pc-cell .cell-box { fill: var(--node); stroke: var(--st-grid); stroke-width: 1; }
+.it-cell.pc-cell.gone .cell-box { fill: var(--surface2); stroke: var(--st-grid); stroke-dasharray: none; }
+.it-cell.pc-cell.covered .cell-box { fill: var(--good-soft); }
+.it-text.pc-x .free-text { fill: var(--text); font-weight: 600; }
+.it-text.pc-x.hot .free-text { fill: var(--hot-deep); font-weight: 800; }
+.it-region.pc-ring .region-box { fill: none; stroke: var(--hot); stroke-width: 3; }
+/* bars */
+.it-cell.qm-bar .cell-box { stroke: none; }
+.it-cell.qm-bar.s0 .cell-box { fill: color-mix(in srgb, var(--c1) 70%, var(--node)); }
+.it-cell.qm-bar.s1 .cell-box { fill: color-mix(in srgb, var(--c4) 70%, var(--node)); }
+.it-cell.qm-bar.s2 .cell-box { fill: color-mix(in srgb, var(--c2) 70%, var(--node)); }
+.it-cell.qm-bar.s3 .cell-box { fill: color-mix(in srgb, var(--c0) 75%, var(--node)); }
+.it-cell.qm-bar.best .cell-box { stroke: var(--text); stroke-width: 1.6; }
+.it-text.qm-bar-name .free-text { font: 600 12px var(--font); fill: var(--muted); }
+.it-region.form-box .region-box { fill: none; stroke: var(--node-line); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.it-region.form-box.s0 .region-box { stroke: var(--c1); } .it-region.form-box.s1 .region-box { stroke: var(--c4); }
+.it-region.form-box.s2 .region-box { stroke: var(--c2); } .it-region.form-box.s3 .region-box { stroke: var(--c0); }
+.it-region.form-box.hot .region-box { stroke-width: 2.4; stroke-dasharray: none; }
+.it-region.aoi-box .region-box { fill: color-mix(in srgb, var(--c4) 7%, transparent); stroke: var(--c4); stroke-width: 2; stroke-dasharray: 6 4; }
+/* inversion bubbles on schematics */
+.it-token.bubble .token-dot { fill: var(--sk-part, var(--node)); stroke: var(--sk-line, var(--edge)); stroke-width: 1.8; }
+.it-token.bubble.hot .token-dot { fill: var(--hot-soft); stroke: var(--hot-deep); stroke-width: 2.4; }
+.it-token.bubble.pair .token-dot { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.4; }
+.it-token.bubble.bad .token-dot { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 2.4; }
+/* the Reed–Muller butterfly */
+.it-cell.rm-bit.v1 .cell-box { fill: color-mix(in srgb, var(--accent) 16%, var(--node)); stroke: var(--accent); }
+.it-cell.rm-bit.v1 .cell-text { fill: var(--accent); font-weight: 800; }
+.it-cell.rm-bit.v0 .cell-text { fill: var(--muted); }
+.it-cell.rm-bit.flip .cell-box { stroke: var(--hot); stroke-width: 3; fill: var(--hot-soft); }
+.it-edge.rm-link .edge-path { stroke: var(--part-b); stroke-width: 1.8; }
+.it-edge.rm-link.dim .edge-path { stroke: var(--node-line); stroke-width: 1.2; stroke-dasharray: 3 4; }
+.it-line.rm-pass .plain-line { stroke: var(--st-grid); stroke-width: 1.4; }
