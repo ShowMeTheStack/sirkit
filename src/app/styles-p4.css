@@ -1,0 +1,55 @@
+/* Part 4 pictures: combinational circuits. Bit boxes, the seven-segment display, rules under sums, signals on
+   buses, and the marks the circuit topics share with part 8. */
+.it-cell.p4-bit .cell-box { fill: var(--node); stroke: var(--node-line); stroke-width: 1.4; rx: 5; }
+.it-cell.p4-bit .cell-text { font-family: var(--mono); fill: var(--muted); font-weight: 600; }
+.it-cell.p4-bit.one .cell-text { fill: var(--accent); font-weight: 800; }
+.it-cell.p4-bit.good .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.2; }
+.it-cell.p4-bit.good .cell-text { fill: var(--good); font-weight: 800; }
+.it-cell.p4-bit.bad .cell-box { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 2.2; }
+.it-cell.p4-bit.bad .cell-text { fill: var(--bad); font-weight: 800; }
+.it-cell.p4-bit.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.6; }
+.it-cell.p4-bit.hot .cell-text { fill: var(--hot-deep); font-weight: 800; }
+.it-cell.p4-bit.act .cell-box { fill: var(--act-soft); stroke: var(--act); stroke-width: 2.4; }
+.it-cell.p4-bit.act .cell-text { fill: var(--text); font-weight: 750; }
+.it-cell.p4-bit.par .cell-box { fill: color-mix(in srgb, var(--c4) 13%, var(--node)); stroke: var(--c4); stroke-width: 2; }
+.it-cell.p4-bit.par .cell-text { fill: var(--c4); font-weight: 800; }
+.it-cell.p4-bit.flip .cell-box { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 3; }
+.it-cell.p4-bit.flip .cell-text { fill: var(--bad); font-weight: 800; }
+.it-cell.p4-bit.dim { opacity: 0.45; }
+.it-cell.p4-label .cell-box { fill: none; stroke: none; }
+.it-cell.p4-label .cell-text { fill: var(--muted); font-weight: 650; font-size: 13px; }
+.it-line.p4-rule .plain-line { stroke: var(--text); stroke-width: 2; }
+
+/* the seven-segment display */
+.it-region.p4-seg-body .region-box { fill: #1b1f2e; stroke: var(--node-line); stroke-width: 1.5; }
+.it-cell.p4-seg .cell-box { fill: #343a52; stroke: none; }
+.it-cell.p4-seg.on .cell-box { fill: #ff5a4f; filter: drop-shadow(0 0 4px rgba(255, 90, 79, 0.7)); }
+.it-cell.p4-seg.miss .cell-box { fill: #343a52; stroke: var(--hot); stroke-width: 2; stroke-dasharray: 3 2; }
+.it-text.p4-segname .free-text { font: 700 11px var(--mono); fill: #c9cfe6; }
+.it-text.p4-segname.out .free-text { fill: var(--muted); }
+
+/* waves drawn for a live circuit: a lit row */
+.it-wave.p4-hot .wave-line { stroke: var(--hot); stroke-width: 2.6; }
+.it-wave.p4-bad .wave-line { stroke: var(--bad); stroke-width: 2.4; }
+.it-wave.p4-z .wave-line { stroke: var(--vz); stroke-dasharray: 5 4; }
+
+/* tokens and labels on custom drawings */
+.it-text.p4-note .free-text { fill: var(--muted); font-size: 13px; }
+.it-text.p4-mono .free-text { font: 650 14px var(--mono); fill: var(--text); }
+.it-text.p4-mono.hot .free-text { fill: var(--hot-deep); font-weight: 800; }
+.it-text.p4-mono.good .free-text { fill: var(--good); font-weight: 800; }
+.it-text.p4-mono.bad .free-text { fill: var(--bad); font-weight: 800; }
+.it-region.p4-box .region-box { fill: color-mix(in srgb, var(--c1) 7%, var(--st-bg)); stroke: color-mix(in srgb, var(--c1) 50%, transparent); stroke-width: 1.6; }
+.it-region.p4-box.hot .region-box { stroke: var(--hot); stroke-width: 2.6; }
+.it-region.p4-box.good .region-box { stroke: var(--good); stroke-width: 2.6; fill: color-mix(in srgb, var(--good) 8%, var(--st-bg)); }
+.it-region.p4-box.dim .region-box { stroke-dasharray: 5 4; }
+.it-line.p4-wire .plain-line { stroke: var(--v0); stroke-width: 2; }
+.it-line.p4-wire.v1 .plain-line { stroke: var(--v1); stroke-width: 2.6; }
+.it-line.p4-wire.vx .plain-line { stroke: var(--vx); stroke-width: 2.6; }
+.it-line.p4-wire.vz .plain-line { stroke: var(--vz); stroke-dasharray: 5 4; }
+.it-line.p4-wire.bus .plain-line { stroke: var(--vbus); stroke-width: 3.2; }
+.it-line.p4-wire.bus.hot .plain-line { stroke: var(--hot); }
+.it-line.p4-wire.dim .plain-line { stroke: var(--node-line); }
+.it-token.p4-dot .token-dot { fill: var(--text); stroke: none; }
+.it-token.p4-dot.on .token-dot { fill: var(--v1); }
+.it-token.p4-dot.bad .token-dot { fill: var(--bad); }
