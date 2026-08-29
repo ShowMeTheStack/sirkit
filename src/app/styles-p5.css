@@ -1,0 +1,42 @@
+/* Part 5 (and the timing kit that parts 5 and 7 share): waveforms drawn up to now behind a curtain, shaded
+   windows (a latch open, setup and hold), marks at clock edges, gate names inside gates, value badges and the
+   rows of a function table to avoid. */
+.it-region.tw-curtain .region-box { fill: var(--st-bg); stroke: none; }
+.it-region.tw-curtain .region-text { display: none; }
+.it-region.tw-span .region-box { fill: color-mix(in srgb, var(--c1) 9%, transparent); stroke: color-mix(in srgb, var(--c1) 40%, transparent); stroke-width: 1; }
+.it-region.tw-span.open .region-box { fill: color-mix(in srgb, var(--c2) 11%, transparent); stroke: color-mix(in srgb, var(--c2) 45%, transparent); }
+.it-region.tw-span.setup .region-box { fill: color-mix(in srgb, var(--c4) 14%, transparent); stroke: color-mix(in srgb, var(--c4) 55%, transparent); }
+.it-region.tw-span.hold .region-box { fill: color-mix(in srgb, var(--c0) 16%, transparent); stroke: color-mix(in srgb, var(--c0) 60%, transparent); }
+.it-region.tw-span.bad .region-box { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 1.6; }
+.it-region.tw-span.meta .region-box { fill: color-mix(in srgb, var(--warn) 16%, transparent); stroke: var(--warn); stroke-dasharray: 3 3; }
+.it-text.tw-span-l .free-text { fill: var(--muted); font-weight: 650; }
+.it-text.tw-span-l.setup .free-text { fill: var(--c4); }
+.it-text.tw-span-l.hold .free-text { fill: var(--hot-deep); }
+.it-text.tw-span-l.bad .free-text { fill: var(--bad); }
+.it-line.tw-mark .plain-line { stroke: var(--node-line); stroke-width: 1.2; stroke-dasharray: 3 4; }
+.it-line.tw-mark.hot .plain-line { stroke: var(--hot); stroke-width: 1.8; }
+.it-line.tw-mark.bad .plain-line { stroke: var(--bad); stroke-width: 1.8; }
+.it-text.tw-mark-l .free-text { fill: var(--muted); font-weight: 650; }
+.it-text.tw-mark-l.bad .free-text { fill: var(--bad); }
+.it-text.tw-gname .free-text { font: 650 11px var(--mono); fill: var(--muted); }
+.it-wave.xwave .wave-line { stroke: var(--warn); }
+.it-wave.hotwave .wave-line { stroke: var(--hot); stroke-width: 2.6; }
+.it-wave.alt .wave-line { stroke: var(--part-b); }
+.it-cell.tw-badge .cell-box { fill: var(--surface2); stroke: var(--border); }
+.it-cell.tw-badge .cell-text { font-family: var(--mono); font-weight: 650; }
+.it-cell.tw-badge.good .cell-box { fill: var(--good-soft); stroke: var(--good); }
+.it-cell.tw-badge.bad .cell-box { fill: var(--bad-soft); stroke: var(--bad); }
+.it-cell.tw-badge.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); }
+.it-cell.tcell.bad-row .cell-text { fill: var(--bad); }
+.it-text.tw-note .free-text { fill: var(--muted); font-size: 13px; }
+.it-text.tw-big .free-text { font: 750 17px var(--mono); fill: var(--text); }
+.it-text.tw-big.good .free-text { fill: var(--good); }
+.it-text.tw-big.bad .free-text { fill: var(--bad); }
+/* the state diagram */
+.it-state.sd-state .st-text { font-family: var(--mono); font-weight: 650; }
+.it-state.sd-state.unused .st-shape { stroke-dasharray: 5 4; fill: var(--surface2); }
+.it-state.sd-state.lock .st-shape { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 2.6; }
+.it-edge.sd-edge.unused .edge-path { stroke-dasharray: 4 4; }
+.it-edge.sd-edge.lock .edge-path { stroke: var(--bad); }
+.it-state.sd-state.hot .st-shape { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 3; stroke-dasharray: none; }
+.it-edge.sd-edge.hot .edge-path { stroke: var(--hot); stroke-width: 3.2; stroke-dasharray: none; }
