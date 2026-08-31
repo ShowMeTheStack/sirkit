@@ -1,0 +1,49 @@
+/* Part 6: state machines. The clock strip, state rows under waveforms, classes of equivalent states, crossed-out
+   cells of the implication table by round, block names of a partition, equations and the design flow's panels. */
+.it-cell.strip .cell-box { fill: var(--node); }
+.it-cell.strip.head .cell-box { fill: var(--surface2); stroke: var(--border); }
+.it-cell.strip.head .cell-text { fill: var(--muted); font-size: 13px; }
+.it-cell.strip.z1 .cell-text { fill: var(--good); font-weight: 800; }
+.it-cell.strip.act .cell-box { fill: var(--act-soft); stroke: var(--act); stroke-width: 2.6; }
+.it-cell.srow .cell-box { fill: color-mix(in srgb, var(--c1) 8%, var(--node)); stroke: var(--node-line); stroke-width: 1; }
+.it-cell.srow .cell-text { font: 650 13px var(--mono); fill: var(--text); }
+.it-text.eqline .free-text { font: 600 16px var(--mono); fill: var(--text); }
+.it-text.eqline.good .free-text { fill: var(--good); }
+.it-text.eqline.hot .free-text { fill: var(--hot-deep); font-weight: 750; }
+.it-text.eqline.dim .free-text { fill: var(--muted); }
+.it-text.blockname .free-text { font: 700 12px var(--mono); fill: var(--muted); }
+.it-text.note .free-text { font-size: 13px; fill: var(--muted); }
+
+/* classes of equivalent states on a diagram */
+.it-state.cl0 .st-shape { fill: color-mix(in srgb, var(--c1) 18%, var(--node)); stroke: var(--c1); stroke-width: 3; }
+.it-state.cl1 .st-shape { fill: color-mix(in srgb, var(--c2) 18%, var(--node)); stroke: var(--c2); stroke-width: 3; }
+.it-state.cl2 .st-shape { fill: color-mix(in srgb, var(--c4) 18%, var(--node)); stroke: var(--c4); stroke-width: 3; }
+.it-state.cl3 .st-shape { fill: color-mix(in srgb, var(--c0) 20%, var(--node)); stroke: var(--c0); stroke-width: 3; }
+
+/* the implication table: crossed out in round 0, 1, 2, 3+ */
+.it-cell.xr0 .cell-text, .it-cell.xr1 .cell-text, .it-cell.xr2 .cell-text, .it-cell.xr3 .cell-text { fill: var(--bad); font-weight: 800; font-size: 18px; }
+.it-cell.xr1 .cell-box { fill: color-mix(in srgb, var(--bad) 9%, var(--node)); }
+.it-cell.xr2 .cell-box { fill: color-mix(in srgb, var(--bad) 6%, var(--node)); }
+.it-cell.xr3 .cell-box { fill: color-mix(in srgb, var(--bad) 4%, var(--node)); }
+
+/* the Mealy and Moore outputs on one waveform */
+.it-wave.mealy .wave-line { stroke: var(--c1); }
+.it-wave.moore .wave-line { stroke: var(--c4); }
+.it-text.mealy .free-text { fill: var(--c1); }
+.it-text.moore .free-text { fill: var(--c4); }
+
+/* cost bars of the assignments */
+.it-cell.bar .cell-box { fill: color-mix(in srgb, var(--c1) 30%, var(--node)); stroke: var(--c1); }
+.it-cell.bar.best .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.4; }
+.it-cell.bar .cell-text { font: 700 13px var(--mono); }
+.it-cell.code .cell-text { font-family: var(--mono); }
+.it-cell.word .cell-text { font: 500 14px var(--font); fill: var(--text); }
+.it-cell.lockout .cell-box { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 2.4; }
+.it-state.unused .st-shape { stroke-dasharray: 5 4; fill: var(--surface2); }
+.it-state.unused .st-text { fill: var(--muted); }
+.it-cell.xcell .cell-text { fill: var(--warn); font-weight: 750; }
+/* the design flow ends with a circuit over its waveforms: give its stage more height on a desktop */
+@media (min-width: 700px) {
+  .topic[data-topic="design-flow"] .stage-wrap, .topic[data-topic="fsm-analysis"] .stage-wrap { height: min(80vh, 780px); }
+}
+.it-text.st-subtext .free-text { font-weight: 600; fill: var(--muted); }
