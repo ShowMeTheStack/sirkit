@@ -1,0 +1,34 @@
+/* Part 8 pictures: memory and programmable logic. Gates in the planes of a PLA, PAL or ROM, fuse dots
+   (made, blown and fixed), LUT bits, logic blocks and routing of the small FPGA, Hamming coverage marks. */
+.it-cell.p8-gate .cell-box { fill: var(--node); stroke: var(--node-line); stroke-width: 1.6; rx: 5; }
+.it-cell.p8-gate .cell-text { font: 700 11px var(--mono); fill: var(--muted); }
+.it-cell.p8-gate.on .cell-box { fill: color-mix(in srgb, var(--v1) 16%, var(--node)); stroke: var(--v1); stroke-width: 2.2; }
+.it-cell.p8-gate.on .cell-text { fill: var(--text); }
+.it-token.p8-fuse .token-dot { fill: var(--text); stroke: var(--st-bg); stroke-width: 1.2; }
+.it-token.p8-fuse.on .token-dot { fill: var(--v1); }
+.it-token.p8-fuse.fixed .token-dot { fill: var(--part-b); }
+.it-token.p8-fuse.fixed.on .token-dot { fill: var(--v1); }
+.it-token.p8-fuse.blown .token-dot { fill: none; stroke: var(--node-line); stroke-width: 1; opacity: 0.7; }
+
+/* Hamming: coverage marks and roles */
+.it-cell.p8-cov .cell-box { fill: color-mix(in srgb, var(--c4) 16%, var(--node)); stroke: var(--c4); stroke-width: 1.4; rx: 4; }
+.it-cell.p8-cov .cell-text { font: 700 12px var(--mono); fill: var(--c4); }
+.it-cell.p8-cov.odd .cell-box { fill: var(--bad-soft); stroke: var(--bad); }
+.it-cell.p8-cov.odd .cell-text { fill: var(--bad); }
+.it-cell.p8-cov.even .cell-box { fill: var(--good-soft); stroke: var(--good); }
+.it-cell.p8-cov.even .cell-text { fill: var(--good); }
+.it-cell.p8-cov.dim { opacity: 0.4; }
+
+/* the FPGA: logic blocks, switch boxes, pads, routing */
+.it-region.p8-clb .region-box { fill: color-mix(in srgb, var(--c1) 8%, var(--node)); stroke: var(--c1); stroke-width: 1.6; }
+.it-region.p8-clb.used .region-box { fill: color-mix(in srgb, var(--hot) 14%, var(--node)); stroke: var(--hot); stroke-width: 2.4; }
+.it-cell.p8-sw .cell-box { fill: var(--surface2); stroke: var(--node-line); stroke-width: 1.2; rx: 3; }
+.it-cell.p8-sw.used .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2; }
+.it-cell.p8-pad .cell-box { fill: var(--surface2); stroke: var(--border); rx: 4; }
+.it-cell.p8-pad .cell-text { font: 700 12px var(--mono); fill: var(--muted); }
+.it-cell.p8-pad.used .cell-box { fill: var(--act-soft); stroke: var(--act); stroke-width: 2; }
+.it-cell.p8-pad.used .cell-text { fill: var(--text); }
+.it-line.p8-chan .plain-line { stroke: var(--node-line); stroke-width: 1.4; opacity: 0.55; }
+.it-line.p8-route .plain-line { stroke: var(--hot); stroke-width: 3; }
+.it-line.p8-route.v1 .plain-line { stroke: var(--v1); }
+.it-line.p8-route.v0 .plain-line { stroke: var(--v0); stroke-width: 2.4; }
