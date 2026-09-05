@@ -1,0 +1,70 @@
+/* Part 9: register-transfer design. ASM charts (state boxes, diamonds made from a square turned 45 degrees and
+   stretched by a class per width, conditional boxes, block frames, connectors), registers and the datapath. */
+.it-cell.asm-state .cell-box { fill: var(--node); stroke: var(--node-line); stroke-width: 1.8; }
+.it-cell.asm-cbox .cell-box { fill: color-mix(in srgb, var(--c4) 9%, var(--node)); stroke: var(--node-line); stroke-width: 1.6; }
+.it-cell.asm-state .cell-text, .it-cell.asm-cbox .cell-text { font: 600 14px var(--mono); fill: var(--text); }
+.it-cell.asm-state.hot .cell-box, .it-cell.asm-cbox.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.8; }
+.it-cell.asm-dec .cell-box { fill: color-mix(in srgb, var(--c1) 8%, var(--node)); stroke: var(--node-line); stroke-width: 1.7; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center; }
+.it-cell.asm-dec.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.8; }
+.it-cell.asm-dec.dk16 .cell-box { transform: scale(1.6, 1) rotate(45deg); }
+.it-cell.asm-dec.dk18 .cell-box { transform: scale(1.8, 1) rotate(45deg); }
+.it-cell.asm-dec.dk20 .cell-box { transform: scale(2.0, 1) rotate(45deg); }
+.it-cell.asm-dec.dk22 .cell-box { transform: scale(2.2, 1) rotate(45deg); }
+.it-cell.asm-dec.dk24 .cell-box { transform: scale(2.4, 1) rotate(45deg); }
+.it-cell.asm-dec.dk26 .cell-box { transform: scale(2.6, 1) rotate(45deg); }
+.it-cell.asm-dec.dk28 .cell-box { transform: scale(2.8, 1) rotate(45deg); }
+.it-cell.asm-dec.dk30 .cell-box { transform: scale(3.0, 1) rotate(45deg); }
+.it-cell.asm-dec.dk32 .cell-box { transform: scale(3.2, 1) rotate(45deg); }
+.it-cell.asm-dec.dk34 .cell-box { transform: scale(3.4, 1) rotate(45deg); }
+.it-region.asm-ghost .region-box { fill: none; stroke: none; }
+.it-region.asm-blk .region-box { fill: none; stroke: var(--node-line); stroke-width: 1.2; stroke-dasharray: 5 5; opacity: 0.8; }
+.it-region.asm-blk.cur .region-box { fill: color-mix(in srgb, var(--act) 6%, transparent); stroke: var(--act); stroke-width: 2; opacity: 1; }
+.it-text.asm-cond .free-text { font: 700 14px var(--mono); fill: var(--text); }
+.it-text.asm-cond.hot .free-text { fill: var(--hot-deep); }
+.it-text.asm-name .free-text { font: 750 13px var(--font); fill: var(--part-b); }
+.it-text.asm-name.hot .free-text { fill: var(--act); }
+.it-text.asm-code .free-text { font: 600 12px var(--mono); fill: var(--muted); }
+.it-text.asm-branch .free-text { font: 700 12px var(--mono); fill: var(--muted); }
+.it-text.asm-branch.hot .free-text { fill: var(--hot-deep); }
+.it-line.asm-wire .plain-line { stroke: var(--edge); stroke-width: 1.8; }
+.it-line.asm-wire.hot .plain-line { stroke: var(--hot); stroke-width: 3; }
+.it-edge.asm-arrow .edge-path { stroke: var(--edge); stroke-width: 1.8; }
+.it-edge.asm-arrow.hot .edge-path { stroke: var(--hot); stroke-width: 3; }
+.it-text.asm-regname .free-text { font: 750 13px var(--font); fill: var(--part-b); }
+.it-text.asm-dec-val .free-text { font: 600 12px var(--mono); fill: var(--muted); }
+.it-cell.asm-reg .cell-box { fill: var(--node); stroke: var(--node-line); stroke-width: 1.6; }
+.it-cell.asm-reg.changed .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.4; }
+.it-cell.asm-reg.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.4; }
+.it-line.dp-wire .plain-line { stroke: var(--edge); stroke-width: 2; }
+.it-line.dp-wire.hot .plain-line { stroke: var(--hot); stroke-width: 3.2; }
+.it-line.dp-bus .plain-line { stroke: var(--part-b); stroke-width: 6; stroke-linecap: round; }
+.it-line.dp-bus.hot .plain-line { stroke: var(--hot); }
+.it-edge.dp-arrow .edge-path { stroke: var(--edge); stroke-width: 2; }
+.it-edge.dp-arrow.hot .edge-path { stroke: var(--hot); stroke-width: 3.2; }
+.it-cell.dp-alu .cell-box { fill: color-mix(in srgb, var(--c4) 12%, var(--node)); stroke: var(--node-line); stroke-width: 1.8; }
+.it-cell.dp-alu.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.8; }
+.it-cell.dp-alu .cell-text { font: 650 13px var(--mono); fill: var(--text); }
+.it-text.dp-buslabel .free-text { font: 650 13px var(--mono); fill: var(--part-b); }
+.it-text.dp-buslabel.hot .free-text { fill: var(--hot-deep); }
+.it-text.codeline .free-text { font: 500 14px var(--mono); fill: var(--text); white-space: pre; }
+.it-text.codeline.hot .free-text { fill: var(--hot-deep); font-weight: 750; }
+.it-text.codeline.done .free-text { fill: var(--muted); }
+.it-text.codeline.faint .free-text { fill: var(--muted); }
+.it-text.codeline.good .free-text { fill: var(--good); font-weight: 650; }
+.it-text.codeline.bad .free-text { fill: var(--bad); font-weight: 650; }
+.it-text.codeline.num .free-text { fill: var(--muted); }
+.it-cell.dp-box .cell-box { fill: var(--surface); stroke: var(--node-line); stroke-width: 2; }
+.it-cell.dp-box .cell-text { font: 750 15px var(--font); fill: var(--text); }
+.it-edge.ctl .edge-path { stroke: var(--c1); stroke-width: 2; }
+.it-edge.ctl.hot .edge-path { stroke: var(--hot); stroke-width: 3.2; }
+.it-edge.stat .edge-path { stroke: var(--c4); stroke-width: 2; }
+.it-text.ctl .free-text { font: 600 13px var(--mono); fill: var(--c1); }
+.it-text.stat .free-text { font: 600 13px var(--mono); fill: var(--c4); }
+.it-text.ctl.hot .free-text { fill: var(--hot-deep); }
+.it-cell.dp-blk .cell-box { fill: var(--surface); stroke: var(--node-line); stroke-width: 1.8; }
+.it-cell.dp-blk .cell-text { font: 600 13px var(--mono); fill: var(--text); }
+.it-text.dp-sig .free-text { font: 600 12px var(--mono); fill: var(--part-b); }
+/* the ASM charts stand in one tall column: give their stage more height on a desktop */
+@media (min-width: 700px) {
+  .topic[data-topic^="asm-"] .stage-wrap, .topic[data-topic="datapath-controller"] .stage-wrap, .topic[data-topic="control-three-ways"] .stage-wrap { height: min(84vh, 860px); }
+}
