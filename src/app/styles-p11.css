@@ -1,0 +1,89 @@
+/* Part 11: digital integrated circuits. Transistor networks (switches filled when they conduct, lit on the path
+   that sets the output, wires coloured by value), voltage-level charts, transfer curves, current bars, and the
+   TTL and ECL output stages drawn as switches. */
+.it-line.cw .plain-line { stroke: var(--sk-wire); stroke-width: 2; stroke-linecap: square; }
+.it-line.cw.v1 .plain-line { stroke: var(--v1); stroke-width: 2.6; }
+.it-line.cw.v0 .plain-line { stroke: var(--v0); stroke-width: 2.6; }
+.it-line.cw.vz .plain-line { stroke: var(--vz); stroke-dasharray: 5 4; stroke-width: 2.4; }
+.it-line.cw.vx .plain-line { stroke: var(--vx); stroke-width: 3.2; }
+.it-line.cw.vc .plain-line { stroke-dasharray: 2 3; }
+.it-line.cg .plain-line { stroke: var(--sk-wire); stroke-width: 2; }
+.it-line.cg.v1 .plain-line { stroke: var(--v1); }
+.it-line.cg.v0 .plain-line { stroke: var(--v0); }
+.it-state.cdot .st-shape { fill: var(--sk-wire); stroke: none; filter: none; }
+.it-state.cdot.v1 .st-shape { fill: var(--v1); } .it-state.cdot.v0 .st-shape { fill: var(--v0); }
+.it-state.cdot.vz .st-shape { fill: var(--vz); } .it-state.cdot.vx .st-shape { fill: var(--vx); }
+.it-state.cbub .st-shape { fill: var(--st-bg); stroke: var(--sk-wire); stroke-width: 2; filter: none; }
+.it-state.cbub.v1 .st-shape { stroke: var(--v1); } .it-state.cbub.v0 .st-shape { stroke: var(--v0); }
+.it-cell.tr-bar .cell-box { fill: var(--st-bg); stroke: var(--sk-line); stroke-width: 2; }
+.it-cell.tr-bar.on .cell-box { fill: var(--sk-line); }
+.it-cell.tr-bar.off .cell-box { fill: var(--st-bg); stroke: var(--node-line); stroke-dasharray: 3 2; }
+.it-cell.tr-bar.unk .cell-box { fill: var(--warn); stroke: var(--warn); }
+.it-cell.tr-bar.path .cell-box { fill: var(--hot); stroke: var(--hot-deep); stroke-width: 2.4; }
+.it-cell.tr-bar.hot .cell-box { stroke: var(--hot); stroke-width: 3.4; }
+.it-cell.tr-bar.faded { opacity: 0.35; }
+.it-cell.tr-bar.focus .cell-box { stroke: var(--part-b); stroke-width: 3.6; }
+.it-text.cm-gate .free-text { font: 700 14px var(--mono); fill: var(--text); }
+.it-text.cm-gate.v1 .free-text { fill: var(--v1); } .it-text.cm-gate.v0 .free-text { fill: var(--v0); }
+.it-text.cm-id .free-text { font: 600 11px var(--mono); fill: var(--muted); }
+.it-text.cm-id.path .free-text { fill: var(--hot-deep); font-weight: 750; }
+.it-text.cm-rail .free-text { font: 700 12px var(--mono); fill: var(--muted); }
+.it-text.cm-term .free-text { font: 700 13px var(--mono); fill: var(--text); }
+.it-text.cm-out .free-text { font: 750 15px var(--mono); fill: var(--text); }
+.it-text.cm-out.v1 .free-text { fill: var(--v1); } .it-text.cm-out.v0 .free-text { fill: var(--v0); }
+.it-text.cm-out.vz .free-text { fill: var(--vz); } .it-text.cm-out.vx .free-text { fill: var(--vx); }
+/* input badges and value tags */
+.it-cell.in-badge .cell-box { fill: var(--surface2); stroke: var(--border); }
+.it-cell.in-badge .cell-text { font: 700 15px var(--mono); }
+.it-cell.in-badge.v1 .cell-box { fill: color-mix(in srgb, var(--v1) 14%, var(--node)); stroke: var(--v1); }
+.it-cell.in-badge.v0 .cell-box { fill: color-mix(in srgb, var(--v0) 12%, var(--node)); stroke: var(--v0); }
+.it-cell.in-badge.vz .cell-box { fill: color-mix(in srgb, var(--vz) 12%, var(--node)); stroke: var(--vz); stroke-dasharray: 4 3; }
+.it-cell.in-badge.vx .cell-box { fill: var(--bad-soft); stroke: var(--bad); }
+.it-cell.tcell.zval .cell-text { fill: var(--vz); font-weight: 750; }
+.it-cell.tcell.xval .cell-text { fill: var(--bad); font-weight: 750; }
+/* voltage charts */
+.it-line.axis .plain-line { stroke: var(--node-line); stroke-width: 1.6; }
+.it-line.grid .plain-line { stroke: var(--st-grid); stroke-width: 1; }
+.it-line.level .plain-line { stroke: var(--muted); stroke-width: 1.4; stroke-dasharray: 4 4; }
+.it-line.level.hot .plain-line { stroke: var(--hot); stroke-width: 2; }
+.it-line.curve .plain-line { stroke: var(--c1); stroke-width: 3; stroke-linecap: round; }
+.it-line.curve.past .plain-line { stroke: var(--hot); }
+.it-line.tangent .plain-line { stroke: var(--c4); stroke-width: 1.6; stroke-dasharray: 5 4; }
+.it-text.ax-l .free-text { font: 600 12px var(--mono); fill: var(--muted); }
+.it-text.lv-l .free-text { font: 700 12px var(--mono); fill: var(--text); }
+.it-text.lv-l.hot .free-text { fill: var(--hot-deep); }
+.it-cell.band .cell-box { stroke: none; }
+.it-cell.band .cell-text { font: 700 13px var(--font); }
+.it-cell.band.hi .cell-box { fill: color-mix(in srgb, var(--v1) 22%, var(--st-bg)); }
+.it-cell.band.lo .cell-box { fill: color-mix(in srgb, var(--c1) 18%, var(--st-bg)); }
+.it-cell.band.undef .cell-box { fill: color-mix(in srgb, var(--warn) 14%, var(--st-bg)); }
+.it-cell.band.margin .cell-box { fill: color-mix(in srgb, var(--good) 22%, var(--st-bg)); stroke: var(--good); stroke-dasharray: 3 3; }
+.it-cell.band.fail .cell-box { fill: var(--bad-soft); stroke: var(--bad); }
+.it-token.probe .token-dot { fill: var(--hot); }
+.it-token.probe.bad .token-dot { fill: var(--bad); } .it-token.probe.good .token-dot { fill: var(--good); }
+/* bars */
+.it-cell.bar .cell-box { fill: color-mix(in srgb, var(--c1) 30%, var(--node)); stroke: var(--c1); }
+.it-cell.bar.over .cell-box { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 2.2; }
+.it-cell.bar.cap .cell-box { fill: none; stroke: var(--good); stroke-width: 2.4; stroke-dasharray: 6 4; }
+.it-cell.bar.alt .cell-box { fill: color-mix(in srgb, var(--c4) 28%, var(--node)); stroke: var(--c4); }
+.it-cell.bar.best .cell-box { fill: var(--good-soft); stroke: var(--good); stroke-width: 2.4; }
+.it-cell.bar .cell-text { font: 700 13px var(--mono); }
+.it-cell.bar-label .cell-box { fill: none; stroke: none; }
+.it-cell.bar-label .cell-text { font: 650 13px var(--font); fill: var(--text); }
+/* output stages drawn as switches */
+.it-cell.sw .cell-box { fill: var(--st-bg); stroke: var(--sk-line); stroke-width: 2; }
+.it-cell.sw .cell-text { font: 700 13px var(--mono); }
+.it-cell.sw.on .cell-box { fill: var(--sk-line); }
+.it-cell.sw.on .cell-text { fill: var(--st-bg); }
+.it-cell.sw.off .cell-box { stroke-dasharray: 4 3; stroke: var(--node-line); }
+.it-cell.sw.off .cell-text { fill: var(--muted); }
+.it-cell.sw.path .cell-box { fill: var(--hot); stroke: var(--hot-deep); }
+.it-cell.sw.path .cell-text { fill: #1b1300; }
+.it-cell.sw.short .cell-box { fill: var(--bad); stroke: var(--bad); }
+.it-cell.sw.short .cell-text { fill: #fff; }
+.it-cell.res .cell-box { fill: var(--surface2); stroke: var(--sk-line); stroke-width: 2; }
+.it-cell.res .cell-text { font: 650 12px var(--mono); }
+.it-cell.res.path .cell-box { stroke: var(--hot); stroke-width: 3; }
+.it-cell.blk .cell-box { fill: var(--surface2); stroke: var(--border); }
+.it-cell.blk .cell-text { font: 650 13px var(--font); fill: var(--text); }
+.it-token.current .token-dot { fill: var(--hot); }
