@@ -1,0 +1,51 @@
+/* Part 12 pictures: Verilog listings on the stage (keywords coloured, the running line lit with a cursor beside it,
+   values written at the end of lines, marked lines), the console, value badges and the scheduler's regions. */
+.it-region.vc-frame .region-box { fill: var(--code-bg); stroke: var(--border); stroke-width: 1.4; }
+.it-text.vc-tok .free-text { font-family: var(--mono); font-weight: 500; fill: var(--text); }
+.it-text.vc-kw .free-text { fill: var(--k-kw); font-weight: 650; }
+.it-text.vc-sys .free-text { fill: var(--k-nt); font-weight: 600; }
+.it-text.vc-num .free-text { fill: var(--k-t); }
+.it-text.vc-str .free-text { fill: var(--k-eps); }
+.it-text.vc-cmt .free-text { fill: var(--k-com); font-style: italic; }
+.it-text.vc-dir .free-text { fill: var(--k-op); }
+.it-text.vc-dim .free-text { opacity: 0.45; }
+.it-text.vc-ln .free-text { font-family: var(--mono); font-weight: 500; fill: var(--muted); opacity: 0.75; }
+.it-text.vc-ln.on .free-text { fill: var(--hot-deep); opacity: 1; font-weight: 700; }
+.it-text.vc-note .free-text { font-family: var(--mono); font-weight: 650; fill: var(--act); }
+.it-text.vc-note.bad .free-text { fill: var(--bad); }
+.it-cell.vc-bar .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 1.4; }
+.it-cell.vc-bar.nba .cell-box { fill: color-mix(in srgb, var(--part-b) 14%, var(--code-bg)); stroke: var(--part-b); }
+.it-cell.vc-mark .cell-box { stroke: none; fill: color-mix(in srgb, var(--muted) 10%, transparent); }
+.it-cell.vc-mark.warn .cell-box { fill: color-mix(in srgb, var(--warn) 14%, transparent); }
+.it-cell.vc-mark.bad .cell-box { fill: var(--bad-soft); }
+.it-cell.vc-mark.good .cell-box { fill: var(--good-soft); }
+.it-cell.vc-mark.nba .cell-box { fill: color-mix(in srgb, var(--part-b) 12%, transparent); }
+.it-cell.vc-mark.sel .cell-box { fill: var(--act-soft); }
+.it-token.vc-cur .token-dot { fill: var(--hot); stroke: var(--st-bg); stroke-width: 1.5; }
+.it-region.vc-console .region-box { fill: var(--code-bg); stroke: var(--border); stroke-width: 1.2; }
+.it-text.vc-out .free-text { font-family: var(--mono); font-weight: 500; fill: var(--text); }
+.it-text.vc-out.on .free-text { fill: var(--act); font-weight: 700; }
+.it-text.vc-out.vc-dim .free-text { fill: var(--muted); font-style: italic; }
+.it-cell.vc-badge .cell-text { font-size: 14px; }
+
+/* the scheduler: one lane per region, the queued work as chips in it */
+.it-region.vr-lane .region-box { fill: var(--surface2); stroke: var(--border); stroke-width: 1.2; }
+.it-region.vr-lane.on .region-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.2; }
+.it-region.vr-lane .region-text { font: 700 12px var(--font); fill: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.it-cell.vr-chip .cell-box { fill: var(--node); stroke: var(--node-line); stroke-width: 1.3; }
+.it-cell.vr-chip .cell-text { font: 600 13px var(--mono); fill: var(--text); }
+.it-cell.vr-chip.nba .cell-box { fill: color-mix(in srgb, var(--part-b) 14%, var(--node)); stroke: var(--part-b); }
+.it-cell.vr-chip.done .cell-box { fill: var(--good-soft); stroke: var(--good); }
+.it-cell.vr-chip.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.2; }
+
+/* operands and results of the width rules */
+.it-cell.vw-bit .cell-box { fill: var(--node); stroke: var(--node-line); stroke-width: 1.2; }
+.it-cell.vw-bit .cell-text { font: 650 14px var(--mono); }
+.it-cell.vw-bit.ext .cell-box { fill: color-mix(in srgb, var(--c1) 14%, var(--node)); stroke: var(--c1); stroke-dasharray: 3 2; }
+.it-cell.vw-bit.cut .cell-box { fill: var(--bad-soft); stroke: var(--bad); stroke-dasharray: 3 2; }
+.it-cell.vw-bit.cut .cell-text { fill: var(--bad); }
+.it-cell.vw-bit.x .cell-text { fill: var(--bad); }
+.it-cell.vw-bit.z .cell-text { fill: var(--k-nt); }
+.it-cell.vw-bit.res .cell-box { fill: var(--act-soft); stroke: var(--act); }
+
+.it-line.vc-wire .plain-line { stroke: var(--edge); stroke-width: 1.6; }
