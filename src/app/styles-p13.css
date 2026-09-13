@@ -1,0 +1,44 @@
+/* Part 13: the processor. The datapath's blocks (registers with their values, the ALU, the memory with the word
+   at AR lit), the bus and the stubs that drive it or load from it, flags, the timing signals and the listing. */
+.it-cell.dp-reg .cell-box { fill: var(--node); stroke: var(--node-line); stroke-width: 1.8; }
+.it-cell.dp-reg .cell-text { font: 700 15px var(--mono); fill: var(--text); }
+.it-cell.dp-reg.alu .cell-box { fill: var(--surface2); }
+.it-cell.dp-reg.alu.busy .cell-box { fill: var(--part-b-soft); stroke: var(--part-b); stroke-width: 2.6; }
+.it-cell.dp-reg.src .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 3; }
+.it-cell.dp-reg.dst .cell-box { fill: var(--act-soft); stroke: var(--act); stroke-width: 3; }
+.it-cell.dp-reg.chg .cell-text { fill: var(--act); }
+.it-cell.dp-memframe .cell-box { fill: var(--surface2); stroke: var(--node-line); stroke-width: 1.6; }
+.it-cell.dp-memframe.src .cell-box { stroke: var(--hot); stroke-width: 3; }
+.it-cell.dp-memframe.dst .cell-box { stroke: var(--act); stroke-width: 3; }
+.it-cell.dp-mem .cell-box { fill: var(--node); stroke: var(--border); stroke-width: 1; }
+.it-cell.dp-mem .cell-text { font: 600 15px var(--mono); fill: var(--text); }
+.it-cell.dp-mem.at .cell-box { fill: color-mix(in srgb, var(--part-b) 14%, var(--node)); stroke: var(--part-b); stroke-width: 2; }
+.it-cell.dp-mem.busy .cell-box { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 2.4; }
+.it-cell.dp-mem.chg .cell-text { fill: var(--act); font-weight: 800; }
+.it-cell.dp-mem.bad .cell-box { fill: var(--bad-soft); stroke: var(--bad); }
+.it-cell.dp-flag .cell-box { fill: var(--surface2); stroke: var(--border); }
+.it-cell.dp-flag .cell-text { font: 700 15px var(--mono); fill: var(--muted); }
+.it-cell.dp-flag.set .cell-box { fill: var(--good-soft); stroke: var(--good); }
+.it-cell.dp-flag.set .cell-text { fill: var(--good); }
+.it-cell.dp-flag.chg .cell-box { stroke-width: 2.6; }
+.it-text.dp-title .free-text { font: 700 15px var(--font); fill: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.it-line.dp-bus .plain-line { stroke: var(--node-line); stroke-width: 6; stroke-linecap: round; }
+.it-line.dp-bus.busy .plain-line { stroke: var(--hot); }
+.it-text.dp-busl .free-text { font: 700 15px var(--mono); fill: var(--muted); }
+.it-text.dp-busl.busy .free-text { fill: var(--hot-deep); }
+.it-edge.dp-stub .edge-path { stroke: var(--node-line); stroke-width: 2; }
+.it-edge.dp-stub.drive .edge-path { stroke: var(--hot); stroke-width: 3.4; }
+.it-edge.dp-stub.load .edge-path { stroke: var(--act); stroke-width: 3.4; }
+.it-edge.dp-alu .edge-path { stroke: var(--node-line); stroke-width: 1.8; }
+.it-edge.dp-alu.busy .edge-path { stroke: var(--part-b); stroke-width: 3; }
+.it-edge.dp-addr .edge-path { stroke: var(--part-b); stroke-width: 1.8; stroke-dasharray: 5 4; }
+.it-edge.dp-addr.busy .edge-path { stroke-width: 2.8; stroke-dasharray: none; }
+/* timing signals and the listing */
+.it-text.tm-cyc .free-text { font: 600 14px var(--mono); fill: var(--muted); }
+.it-text.tm-cyc.hot .free-text { fill: var(--hot-deep); font-weight: 800; }
+.it-cell.tcell.ls-cell .cell-text { font: 600 15px var(--mono); }
+.it-cell.bit-cell .cell-box { fill: var(--node); stroke: var(--node-line); }
+.it-cell.bit-cell .cell-text { font: 750 17px var(--mono); }
+.it-cell.bit-cell.x .cell-box { fill: var(--part-b-soft); stroke: var(--part-b); }
+.it-cell.bit-cell.y .cell-box { fill: var(--hot-soft); stroke: var(--hot); }
+.it-cell.bit-cell.z .cell-box { fill: var(--part-a-soft); stroke: var(--part-a); }
