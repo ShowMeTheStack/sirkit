@@ -1,0 +1,45 @@
+/* Topics, lessons, exercises and courses: what the stage draws for circuits (a schematic item, waveform rows,
+   truth tables and K-maps) and the bits of these pages the base stylesheet does not have. */
+.it-schem .sk-t { font-family: var(--font); }
+.it-schem g[data-part].sk-hot .sk-body { fill: var(--hot-soft); stroke: var(--hot-deep); }
+.it-schem .sk-wire { transition: stroke .25s; }
+.it-schem .sk-wire.v1, .ls-schem .sk-wire.v1 { stroke-width: 2.4; }
+.wave-line { fill: none; stroke: var(--v1); stroke-width: 2; stroke-linejoin: round; }
+.wave-line.bus { stroke: var(--vbus); stroke-width: 1.6; }
+.it-wave.dim .wave-line { stroke: var(--node-line); }
+.wave-val { font: 600 12px var(--mono); fill: var(--text); }
+.it-text.wave-t .free-text { font: 500 12px var(--mono); fill: var(--muted); }
+.it-line.cursor .plain-line { stroke: var(--accent); stroke-width: 1.6; stroke-dasharray: 4 4; }
+.it-cell.out .cell-text { font-weight: 750; }
+.it-cell.out.hot .cell-box { fill: var(--hot-soft); stroke: var(--hot); }
+.it-cell.read .cell-box { fill: var(--surface2); }
+.it-cell.read .cell-text { fill: var(--text); }
+.it-cell.kcell.v1 .cell-text { fill: var(--accent); font-weight: 750; }
+.it-cell.kcell.v0 .cell-text { fill: var(--muted); }
+.it-cell.kcell.vx .cell-text { fill: var(--warn); }
+.it-text.kmap-m .free-text { font: 500 9px var(--mono); fill: var(--muted); }
+.it-text.kmap-corner .free-text { font: 600 13px var(--mono); fill: var(--muted); }
+.it-region.kgroup .region-box { fill: color-mix(in srgb, var(--c1) 10%, transparent); stroke: var(--c1); stroke-width: 2.4; }
+.it-region.kgroup.g1 .region-box { fill: color-mix(in srgb, var(--c2) 10%, transparent); stroke: var(--c2); }
+.it-region.kgroup.g2 .region-box { fill: color-mix(in srgb, var(--c4) 10%, transparent); stroke: var(--c4); }
+.it-region.kgroup.g3 .region-box { fill: color-mix(in srgb, var(--c0) 12%, transparent); stroke: var(--c0); }
+.it-region.kgroup.g4 .region-box { fill: color-mix(in srgb, var(--c5) 10%, transparent); stroke: var(--c5); }
+.it-region.kgroup.g5 .region-box { fill: color-mix(in srgb, var(--c6) 10%, transparent); stroke: var(--c6); }
+.it-region.kgroup.bad .region-box { stroke: var(--bad); stroke-dasharray: 5 4; }
+/* the topics page */
+.notice.soft { background: var(--surface); border-color: var(--border); color: var(--muted); }
+.notice.soft svg { color: var(--accent); }
+.fam-topics { list-style: none; margin: 8px 0 0; padding: 0; }
+.fam-topics li { padding: 3px 0; border-top: 1px solid var(--border); font-size: 14px; }
+.fam-topics li a { color: var(--text); text-decoration: none; }
+.fam-topics li a:hover { color: var(--accent); }
+.fam-card.plain { cursor: default; }
+.fam-card.plain:hover { transform: none; }
+.course-art { display: grid; place-items: center; color: var(--accent); }
+.course-art svg { width: 40px; height: 40px; }
+/* lessons */
+.ls-schem { padding: 10px; border: 1px solid var(--border); }
+.ls-schem svg.sk { margin: 0 auto; }
+.ans-expr { font-size: 15px; margin: 4px 0 8px; }
+.fill-table input[maxlength="1"] { width: 52px; }
+.fill-table tbody th.mono { font-family: var(--mono); letter-spacing: .08em; }
