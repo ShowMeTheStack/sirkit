@@ -1,0 +1,59 @@
+/* Exercise answer areas with embedded editors, and the lesson blocks that run (src/app/exercises*.js, labs.js) */
+.exc-live { border: 1px solid var(--border); border-radius: 12px; background: var(--surface); overflow: hidden; margin: 8px 0; }
+.exc-tools, .exc-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 6px 8px; background: var(--surface2); }
+.exc-tools { border-bottom: 1px solid var(--border); }
+.exc-foot { border-top: 1px solid var(--border); }
+.exc-tools .grow, .exc-foot .grow { flex: 1; }
+.exc-pal { display: flex; flex-wrap: wrap; gap: 4px; }
+.exc-part { font-size: 12.5px; }
+.exc-canvas { position: relative; min-height: 200px; }
+.exc-canvas .ed-wrap { position: absolute; inset: 0; }
+.exc-status { font-size: 12.5px; }
+.exc-cex { margin: 8px 0; }
+.exc-cex td.bad { color: var(--bad); font-weight: 600; }
+.exc-kmap { margin: 8px 0; overflow-x: auto; }
+.exc-groups { list-style: none; padding: 0; margin: 6px 0; display: grid; gap: 4px; }
+.exc-groups li { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.exc-groups li.bad .mono { color: var(--bad); }
+.exc-proof { padding-left: 1.6em; display: grid; gap: 6px; margin: 8px 0; }
+.exc-step { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.exc-step input { flex: 1 1 220px; min-width: 0; }
+.exc-step select { flex: 0 1 220px; min-width: 0; }
+.exc-step.bad input { border-color: var(--bad); background: var(--bad-soft); }
+.exc-step .eq { font: 15px var(--mono); color: var(--muted); }
+.exc-work { margin: 8px 0; }
+.exc-work textarea { width: 100%; }
+.exc-stage { margin: 14px 0; }
+.exc-stage h3 { margin: 0 0 6px; font-size: 16px; }
+.exc-console { max-height: 240px; overflow: auto; }
+.exc-wavebox, .ls-wave { overflow-x: auto; margin: 8px 0; }
+.exc-wave { display: block; font: 13px var(--mono); }
+.exc-wave .exc-grid { stroke: var(--st-grid); stroke-width: 1; }
+.exc-wave .exc-lvl { fill: none; stroke: var(--accent); stroke-width: 2; }
+.exc-wave .exc-sig { fill: var(--text); }
+.exc-wave .exc-clk, .exc-wave .exc-q { fill: var(--muted); font-size: 11px; }
+.exc-wave .exc-slot { fill: var(--accent-soft); fill-opacity: .35; stroke: var(--accent); stroke-opacity: .35; cursor: pointer; }
+.exc-wave .exc-slot.blank { fill: var(--hot-soft); stroke: var(--hot); fill-opacity: .6; }
+.exc-wave .exc-slot:hover { fill-opacity: .7; }
+.exc-fsm svg { display: block; max-width: 100%; height: auto; max-height: 360px; margin: 0 auto; }
+/* on a desktop a state diagram keeps its own size (its names stay readable); only a phone squeezes it */
+@media (min-width: 601px) { .exc-fsm svg { max-height: none; } }
+.ls-func-forms { display: grid; gap: 4px; margin: 8px 0; }
+.ls-tt td.f { font-weight: 600; }
+.ls-vl { margin-bottom: 4px; }
+.lab-exp h4 { margin: 10px 0 4px; }
+.lab-exp-steps { margin: 6px 0; }
+.lab-exp-tools { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.lab-exp .ex-d.ok { color: var(--good); }
+.lab-exp .ex-d.bad { color: var(--bad); }
+textarea.exc-code { width: 100%; }
+textarea.exc-code.wrap { white-space: pre-wrap; }
+@media (max-width: 640px) {
+  .exc-step select { flex-basis: 100%; }
+  textarea.exc-code { white-space: pre-wrap; }
+}
+/* an exercise answered with a program (a Verilog module, a CPU program) takes a wider column, so lines of code of
+   the usual length fit without scrolling sideways */
+.lesson.exercise:has(#ansProgram) { max-width: 1060px; }
+/* the observation table of a lab: cells for a few digits, narrow enough to fit beside the bench */
+.lab-obs input { width: 52px; padding-left: 4px; padding-right: 4px; }
