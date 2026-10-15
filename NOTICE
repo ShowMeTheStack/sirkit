@@ -1,0 +1,75 @@
+Sirkit
+Copyright (c) 2026 Jyotiprakash Mishra <mail@jyotiprakash.org>
+https://sirkit.jyotiprakash.org
+
+This notice says which terms cover which parts of this repository. If a file is
+not listed below, it is covered by section 1.
+
+
+1. SOFTWARE AND CONTENT: GNU General Public License v3.0 or later, with an
+   attribution term
+   -------------------------------------------------------------------------------
+
+   Covered: everything in this repository, including the schematic layout engine,
+   the animation stage and its drawing kits, the engines for Boolean algebra and
+   minimisation, the logic simulator and its parts and chips, the Verilog compiler
+   and simulator, state machines, ASM charts, asynchronous circuits, switch-level
+   CMOS and the small processor, every topic (its picture, its narration, its
+   predictions and its quiz), the lessons, exercises, labs and tours, the editors
+   and workbenches, the build and test tools, and the built index.html.
+
+   License text: LICENSE (GNU GPL v3.0). You may use, modify and distribute this
+   work under GPL-3.0-or-later. Derived works must be distributed under the same
+   license, with their complete corresponding source code.
+
+   Additional term under section 7(b) of the GNU GPL v3.0:
+   Every copy and every derived work must preserve the following author
+   attribution, both in the source files and in the Appropriate Legal Notices
+   displayed by any work that contains or is built from this software (for an
+   interactive program or a website, in an "About" box or on a page that is
+   reachable from every screen, such as an "About" or "Credits" page):
+
+       Based on Sirkit by Jyotiprakash Mishra
+       (https://sirkit.jyotiprakash.org)
+
+   This applies equally to modified versions, translations, ports to other
+   languages, and works that include any part of the topics, their narration,
+   their quizzes, the lessons or the exercises, including screenshots or
+   recordings of the animations used as teaching material. Removing or obscuring
+   this attribution is a violation of the license, and under section 8 of the GNU
+   GPL it terminates your rights under it.
+
+   Additional term under section 7(c) of the GNU GPL v3.0:
+   Modified versions must be marked as changed from the original, in reasonable
+   ways, and must not be presented as the original Sirkit.
+
+
+2. NAMES (not licensed)
+   -------------------------------------------------------------------------------
+
+   The name "Sirkit" as the name of this program, and the domain
+   sirkit.jyotiprakash.org, identify the author's work. Under section 7(e) of the
+   GNU GPL v3.0, no rights are granted to use them for a derived work, except to
+   give the attribution required above.
+
+
+3. THE SUBJECT
+   -------------------------------------------------------------------------------
+
+   The theorems, methods and algorithms of digital design that Sirkit teaches
+   belong to everyone, as do the published behaviour and pin numbers of the
+   74-series chips it models. The circuits, functions, machines, programs and
+   examples in it, the pictures and the explanations were made for Sirkit.
+
+
+4. TRADEMARKS
+   -------------------------------------------------------------------------------
+
+   Chrome and Chromium are trademarks of Google LLC. Safari is a trademark of
+   Apple Inc. Firefox is a trademark of the Mozilla Foundation. GitHub is a
+   trademark of GitHub, Inc. All other trademarks are the property of their
+   respective owners.
+
+   These names are used only to describe compatibility. Sirkit is an independent
+   work. It is not affiliated with, endorsed by, or sponsored by any of these
+   organisations.
