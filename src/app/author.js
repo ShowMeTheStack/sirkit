@@ -46,6 +46,7 @@
       ['NetSim', 'https://netsim.jyotiprakash.org', 'a network simulator you can watch packet by packet'],
       ['Tooring', 'https://tooring.jyotiprakash.org', 'theory of computation you can play with: automata, grammars and Turing machines, animated'],
       ['Sifer', 'https://sifer.jyotiprakash.org', 'cryptography you can see inside: every cipher, hash and curve opened up, from Enigma to post-quantum'],
+      ['Nooral', 'https://nooral.jyotiprakash.org', 'machine learning you can see inside: every model opened up, from least squares to a tiny GPT trained in the browser'],
     ],
     links: [
       ['mail@jyotiprakash.org', 'mailto:mail@jyotiprakash.org'],
